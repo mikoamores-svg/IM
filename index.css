@@ -1,0 +1,417 @@
+.main {
+  overflow: hidden;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 100%;
+  min-width: 1728px;
+  min-height: 1117px;
+  position: relative;
+}
+
+.main {
+  max-width: 1728px;
+  max-height: 1117px;
+}
+
+/* Button styles: match other pages */
+.nav-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffffff;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.06); }
+.nav-btn:focus { outline: 3px solid rgba(168,255,53,0.18); outline-offset: 2px; }
+.nav-btn.active { background: #a8ff35; color: #001; box-shadow: 0 6px 18px rgba(168,255,53,0.18); }
+
+.primary-btn { background: #a8ff35; color: #001; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-weight:700; }
+.primary-btn:focus { outline: 3px solid rgba(0,0,0,0.12); }
+
+/* Ensure CTA button (frame-4) behaves like a button */
+.frame-4 { border: none; cursor: pointer; }
+.frame-4:focus { outline: 3px solid rgba(168,255,53,0.18); }
+
+.main .div {
+  position: absolute;
+  top: 31px;
+  left: -6px;
+  width: 1728px;
+  height: 87px;
+  background-color: #37303a;
+  opacity: 0.4;
+  z-index: 2;
+}
+
+.main .rectangle-2 {
+  position: absolute;
+  top: 1004px;
+  left: -22px;
+  width: 1728px;
+  height: 87px;
+  background-color: #37303a;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.main .rectangle-3 {
+  position: absolute;
+  top: 266px;
+  left: calc(50.00% - 607px);
+  width: 1214px;
+  height: 131px;
+  background-color: #37303a;
+  border-radius: 100px;
+  box-shadow: 7px 7px 10px #2a301a;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.main .rectangle-4 {
+  position: absolute;
+  top: 447px;
+  left: 1241px;
+  width: 423px;
+  height: 212px;
+  background-color: #37303a;
+  border-radius: 30px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.main .rectangle-5 {
+  position: absolute;
+  top: 434px;
+  left: 48px;
+  width: 1176px;
+  height: 524px;
+  background-color: #37303a;
+  border-radius: 30px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.main .pexels-photo-by-blke {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1728px;
+  height: 1117px;
+  opacity: 100%;
+  object-fit: cover;
+}
+
+.main .navbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0px 40px;
+  position: absolute;
+  top: calc(50.00% - 496px);
+  left: calc(50.00% - 310px);
+}
+
+/* ensure nav is above background and receives pointer events */
+.main .navbar { z-index: 10; pointer-events: auto; }
+
+
+.main .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  z-index: 2;
+
+}
+
+.main .frame {
+  display: inline-flex;
+  gap: 10px;
+  padding: 0px 40px;
+  top: calc(50.00% + 478px);
+  left: calc(50.00% - 827px);
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.main .div-wrapper {
+  position: relative;
+  width: 51px;
+  height: 24px;
+  z-index: 2;
+
+}
+
+.main .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.main .CALL-TO-ACTION {
+  position: absolute;
+  top: 1017px;
+  left: calc(50.00% - 97px);
+  width: 195px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a8ff35;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0px 0px 25px #a8ff3580;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.main .frame-2 {
+  display: flex;
+  height: 62px;
+  margin-left: 1px;
+  width: 160px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.main .text-wrapper-4 {
+  position: relative;
+  width: 120px;
+  height: 20px;
+  margin-top: -1.00px;
+  text-shadow: 0px 0px 25px #a8ff3540;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main .TEXT {
+  position: absolute;
+  top: calc(50.00% - 406px);
+  left: calc(50.00% - 673px);
+  width: 1396px;
+  height: 120px;
+}
+
+.main .frame-3 {
+  display: flex;
+  width: 1151px;
+  height: 91px;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  top: calc(50.00% - 31px);
+  left: calc(50.00% - 619px);
+  align-items: center;
+  position: absolute;
+}
+
+.main .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.main .text-wrapper-6 {
+  position: absolute;
+  top: calc(50.00% - 60px);
+  left: calc(50.00% - 698px);
+  width: 1394px;
+  text-shadow: 7px 7px 10px #cae5bd40;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  color: #ffffff;
+}
+
+.main .image-removebg {
+  position: absolute;
+  top: 417px;
+  left: 350px;
+  width: 854px;
+  height: 558px;
+  aspect-ratio: 1.53;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.main .p {
+  position: absolute;
+  top: 306px;
+  left: calc(50.00% - 555px);
+  width: 1125px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 19px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
+
+.main .text-wrapper-7 {
+  position: absolute;
+  top: 277px;
+  left: calc(50.00% - 53px);
+  width: 106px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
+
+.main .equipments-tools {
+  position: absolute;
+  top: 451px;
+  left: 80px;
+  width: 415px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
+
+.main .span {
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 50px;
+  letter-spacing: 0;
+}
+
+.main .text-wrapper-8 {
+  font-size: 30px;
+}
+
+.main .industries-we-serve {
+  position: absolute;
+  top: 466px;
+  left: 1281px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
+
+.main .power-plants {
+  position: absolute;
+  top: 508px;
+  left: 1295px;
+  width: 300px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
+
+.main .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 335px;
+  height: 178px;
+  aspect-ratio: 2.05;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.main .frame-4 {
+  top: 880px;
+  left: 76px;
+  width: 212px;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  background-color: #c6c6c6;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 7px 7px 10px #000000;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  pointer-events: auto;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.main .text-wrapper-9 {
+  margin-top: -2px;
+  height: 24px;
+  margin-left: 4px;
+  width: 128px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* ensure buttons have visible text on the hero background */
+.nav-btn { color: #ffffff; }
+.primary-btn { color: #001; }
+
+.main .element-gerbag {
+  position: absolute;
+  top: 1025px;
+  left: 1251px;
+  width: 456px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  z-index: 2;
+}
