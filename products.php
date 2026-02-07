@@ -34,44 +34,88 @@
           <aside class="sidebar" aria-label="Categories">
             <h2>Categories</h2>
             <div class="category-list">
-              <button class="category-btn active" type="button" onclick="location.href='products.php'">FOREFRONT MAJOR MACHINERIES/EQUIPMENTS</button>
-              <button class="category-btn" type="button" onclick="location.href='category1.php'">ON-SITE MACHINING EQUIPMENTS</button>
-              <button class="category-btn" type="button" onclick="location.href='category2.php'">NON-DESTRUCTIVE TESTING EQUIPMENTS &amp; OTHER SPECIALIZED TOOLS</button>
-              <button class="category-btn" type="button" onclick="location.href='category3.php'">TECHNOLOGICALLY ADVANCE PRECISION MEASURING EQUIPMENT</button>
-              <button class="category-btn" type="button" onclick="location.href='category4.php'">SPECIAL PRODUCTS</button>
+              <button class="category-btn active" type="button" onclick="location.href='products.php'">
+                CNC MACHINED PRODUCTS
+              </button>
+              <button class="category-btn" type="button" onclick="location.href='category1.php'">
+                ON-SITE MACHINING EQUIPMENTS
+              </button>
+              <button class="category-btn" type="button" onclick="location.href='category2.php'">
+                NON-DESTRUCTIVE TESTING EQUIPMENTS &amp; OTHER SPECIALIZED TOOLS
+              </button>
+              <button class="category-btn" type="button" onclick="location.href='category3.php'">
+                TECHNOLOGICALLY ADVANCE PRECISION MEASURING EQUIPMENT
+              </button>
+              <button class="category-btn" type="button" onclick="location.href='category4.php'">
+                SPECIAL PRODUCTS
+              </button>
             </div>
           </aside>
 
           <main class="main-content">
-            <h2>EQUIPMENTS</h2>
+            <h2>CNC MACHINED PRODUCTS</h2>
 
             <div class="equipments-grid">
               <article class="card">
-                <img src="equipments/equipment1.png" alt="Supersize Machining Center" />
-                <h3>SUPERSIZE MACHINING CENTER (2X3Meters)</h3>
-                <p>Large double-column vertical machining center for oversized parts and molds.</p>
+                <img src="products/Spur Gear.png" alt="CNC Machined Spur Gear" />
+                <h3>SPUR GEAR</h3>
+                <p>Precision CNC-machined spur gears for power transmission and industrial machinery.</p>
               </article>
 
               <article class="card">
-                <img src="equipments/equipment2.png" alt="Multi Axis Robotic Welding Machine" />
-                <h3>MULTI AXIS ROBOTIC WELDING MACHINE</h3>
-                <p>Automated multi-axis robotic welding cells for precision welding.</p>
+                <img src="products/HELICAL GEAR.png" alt="Helical Gear" />
+                <h3>HELICAL GEAR</h3>
+                <p>CNC-manufactured helical gears offering smooth and quiet operation.</p>
               </article>
 
               <article class="card">
-                <img src="equipments/equipment3.png" alt="Leadwell V-40 Machining Center" />
-                <h3>MACHINING CENTER LEADWELL V-40</h3>
-                <p>Leadwell V-40 vertical machining center for precision milling operations.</p>
+                <img src="products/BEVEL GEAR.png" alt="Bevel Gear" />
+                <h3>BEVEL GEAR</h3>
+                <p>High-accuracy bevel gears for angular power transmission applications.</p>
               </article>
 
               <article class="card">
-                <img src="equipments/equipment4.png" alt="Mitsubishi FA10 Wire EDM" />
-                <h3>WIRECUT-EDM MACHINE MITSUBISHI FA10</h3>
-                <p>High-precision Wire EDM for complex mold-making and tooling.</p>
+                <img src="products/WORM GEAR.png" alt="Worm Gear" />
+                <h3>WORM GEAR</h3>
+                <p>CNC-produced worm gears designed for high torque and speed reduction.</p>
+              </article>
+
+              <article class="card">
+                <img src="products/SHAFT and COUPLING.png" alt="Shaft and Coupling" />
+                <h3>SHAFT &amp; COUPLING</h3>
+                <p>Custom CNC-machined shafts and couplings with tight dimensional tolerances.</p>
+              </article>
+
+              <article class="card">
+                <img src="products/INDUSTRIAL FLANGE.png" alt="Flange" />
+                <h3>INDUSTRIAL FLANGE</h3>
+                <p>Durable CNC-machined flanges for piping, structural, and mechanical systems.</p>
+              </article>
+
+              <article class="card">
+                <img src="products/BUSHING.png" alt="Machine Bushing" />
+                <h3>BUSHING</h3>
+                <p>CNC-machined bushings for wear resistance and smooth rotational motion.</p>
+              </article>
+
+              <article class="card">
+                <img src="products/BEARING HOUSING.png" alt="Bearing Housing" />
+                <h3>BEARING HOUSING</h3>
+                <p>Precision CNC bearing housings ensuring proper alignment and load support.</p>
+              </article>
+
+              <article class="card">
+                <img src="products/MOUNTING BRACKET.png" alt="Mounting Bracket" />
+                <h3>MOUNTING BRACKET</h3>
+                <p>Custom CNC-fabricated mounting brackets for industrial equipment.</p>
+              </article>
+
+              <article class="card">
+                <img src="products/CUSTOM CNC METAL PART.png" alt="Custom CNC Metal Part" />
+                <h3>CUSTOM CNC METAL PART</h3>
+                <p>Made-to-order CNC components based on client drawings and specifications.</p>
               </article>
             </div>
-
-            <!-- gallery removed per request -->
           </main>
         </div>
 
