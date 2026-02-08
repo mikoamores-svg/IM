@@ -182,3 +182,106 @@
         VIS: { name: 'Visayas', fee: 800 },
         MIN: { name: 'Mindanao', fee: 1200 }
       };
+      
+      
+const itemsBody = document.getElementById("itemsBody");
+const addItemBtn = document.getElementById("addItemBtn");
+
+// Create item row (structure matches your table)
+function createItemRow() {
+  const tr = document.createElement("tr");
+  tr.className = "item-row";
+
+  tr.innerHTML = `
+    <td>
+      <select class="product">
+        ${PRODUCTS.map(p => `<option value="${p.id}">${p.name}</option>`).join("")}
+      </select>
+    </td>
+    <td>
+      <input type="number" class="qty" min="1" value="1">
+    </td>
+    <td>
+      <input type="number" class="price" min="0" step="0.01" value="0">
+    </td>
+    <td>
+      <button type="button" class="nav-btn remove">✖</button>
+    </td>
+  `;
+
+  itemsBody.appendChild(tr);
+
+  // auto price
+  const product = tr.querySelector(".product");
+  const price = tr.querySelector(".price");
+
+  product.onchange = () => {
+    price.value = PRICES[product.value] || 0;
+    updateEstimate();
+  };
+
+  tr.querySelectorAll("input, select").forEach(el =>
+    el.addEventListener("input", updateEstimate)
+  );
+
+  tr.querySelector(".remove").onclick = () => {
+    tr.remove();
+    updateEstimate();
+  };
+
+  updateEstimate();
+}
+
+addItemBtn.onclick = createItemRow;
+createItemRow(); // first row
+
+// =========================
+// ESTIMATE + FORM SYNC
+// =========================
+function peso(v) {
+  return "₱" + Number(v).toFixed(2);
+}
+
+
+function updateEstimate() {
+  let subtotal = 0;
+  const hiddenItems = document.getElementById("hiddenItems");
+  hiddenItems.innerHTML = "";
+
+  document.querySelectorAll(".item-row").forEach((row, i) => {
+    const product = row.querySelector(".product").value;
+    const qty = Number(row.querySelector(".qty").value);
+    const price = Number(row.querySelector(".price").value);
+
+    subtotal += qty * price;
+
+    hiddenItems.innerHTML += `
+      <input type="hidden" name="items[${i}][product]" value="${product}">
+      <input type="hidden" name="items[${i}][qty]" value="${qty}">
+      <input type="hidden" name="items[${i}][price]" value="${price}">
+    `;
+  });
+
+  const zone = deliveryZone.value;
+  const delivery = DELIVERY_ZONES[zone].fee;
+  const rush = rushToggle.checked ? subtotal * 0.2 : 0;
+  const total = subtotal + delivery + rush;
+
+  // Update UI
+  document.getElementById("subtotal").textContent = peso(subtotal);
+  document.getElementById("deliveryFee").textContent = peso(delivery);
+  document.getElementById("rushFee").textContent = peso(rush);
+  document.getElementById("totalEstimate").textContent = peso(total);
+
+  // Update hidden inputs (totals)
+  subtotalInput.value     = subtotal;
+  deliveryFeeInput.value  = delivery;
+  rushFeeInput.value      = rush;
+  totalInput.value        = total;
+
+  // Update hidden inputs (order flags)
+  deliveryZoneInput.value = zone;                 // 'MM', 'LUZ', etc.
+  rushInput.value         = rushToggle.checked ? 1 : 0;
+}
+
+  
