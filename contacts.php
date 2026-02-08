@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $phone   = $_POST["phone"] ?? "";
     $message = $_POST["message"] ?? "";
 
-    $sql = "INSERT INTO contact (name, email, phone, message)
+    $sql = "INSERT INTO contacts (name, email, phone, message)
             VALUES (?, ?, ?, ?)";
 
     $stmt = $connections->prepare($sql);
