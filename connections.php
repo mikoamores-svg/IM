@@ -1,8 +1,23 @@
 <?php 
-$connections = mysqli_connect("localhost", "root", "", "database_gerbag");
+// Database Connection Configuration
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "database_gerbag";
+
+// Create connection
+$connections = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+// Check connection
 if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    error_log("Database Connection Failed: " . mysqli_connect_error());
+    die("Database connection error. Please contact support.");
 }
 
+// Set charset to UTF-8
+mysqli_set_charset($connections, "utf8mb4");
+
+// Enable error reporting
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 ?>
 

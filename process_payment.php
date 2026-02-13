@@ -5,8 +5,8 @@ if (isset($_GET['order_id']) && isset($_GET['method'])) {
     $order_id = (int)$_GET['order_id'];
     $method = $_GET['method'];
     
-    // We use 'order_id' here because that is the common primary key name in your setup
-    $query = $connection->prepare("SELECT total_amount FROM orders WHERE order_id = ?");
+    // Query the orders table with correct column name (Order_id - uppercase O)
+    $query = $connection->prepare("SELECT total_amount FROM orders WHERE Order_id = ?");
     $query->bind_param("i", $order_id);
     $query->execute();
     $result = $query->get_result();
@@ -22,27 +22,28 @@ if (isset($_GET['order_id']) && isset($_GET['method'])) {
             $stmt->bind_param("ids", $order_id, $amount, $method);
             $stmt->execute();
 
-            // Update the order status. 
-            // NOTE: Make sure you ran the ALTER TABLE SQL I gave you earlier!
-            $update = $connection->prepare("UPDATE orders SET payment_status = 'Paid' WHERE order_id = ?");
+            // Update the order status
+            $update = $connection->prepare("UPDATE orders SET payment_status = 'Paid' WHERE Order_id = ?");
             $update->bind_param("i", $order_id);
             $update->execute();
 
+            // Create delivery record
             $delivery = $connection->prepare("INSERT INTO delivery_management (order_id, status) VALUES (?, 'In Production')");
             $delivery->bind_param("i", $order_id);
             $delivery->execute();
 
             $connection->commit();
 
+            // Redirect to success page
             header("Location: success.php?order_id=" . $order_id);
             exit;
 
         } catch (Exception $e) {
             $connection->rollback();
-            die("Payment Error: " . $e->getMessage());
+            die("Payment Error: " . htmlspecialchars($e->getMessage()));
         }
     } else {
-        die("Error: Order #" . $order_id . " not found in database.");
+        die("Error: Order #" . htmlspecialchars($order_id) . " not found in database.");
     }
 }
 ?>

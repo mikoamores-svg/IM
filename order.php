@@ -25,14 +25,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['customer'])) {
            INSERT CUSTOMER
         ===================== */
         $c = $_POST['customer'];
+        
+        // Create variables for bind_param (must be variables, not function results)
+        $firstName = trim($c['firstName']);
+        $lastName = trim($c['lastName']);
+        $middleName = trim($c['middleName'] ?? '');
+        $company = trim($c['company'] ?? '');
+        $address = trim($c['address']);
+        $email = trim($c['email']);
+        $phone = trim($c['phone'] ?? '');
+        
         $stmt = $connection->prepare(
             "INSERT INTO customers (first_name, last_name, middle_name, company, address, email, phone)
              VALUES (?, ?, ?, ?, ?, ?, ?)"
         );
-        $stmt->bind_param("sssssss", 
-            trim($c['firstName']), trim($c['lastName']), trim($c['middleName'] ?? ''), 
-            trim($c['company'] ?? ''), trim($c['address']), trim($c['email']), trim($c['phone'] ?? '')
-        );
+        $stmt->bind_param("sssssss", $firstName, $lastName, $middleName, $company, $address, $email, $phone);
         $stmt->execute();
         $customer_id = $connection->insert_id;
         $stmt->close();
@@ -173,12 +180,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['customer'])) {
 
     <script>
       const PRODUCTS = [
-        {id: 'SPUR_GEAR', name: 'SPUR GEAR'}, {id: 'HELICAL_GEAR', name: 'HELICAL GEAR'},
-        {id: 'BEVEL_GEAR', name: 'BEVEL GEAR'}, {id: 'WORM_GEAR', name: 'WORM GEAR'},
+        {id: 'SPUR_GEAR', name: 'SPUR GEAR'},
+        {id: 'HELICAL_GEAR', name: 'HELICAL GEAR'},
+        {id: 'BEVEL_GEAR', name: 'BEVEL GEAR'},
+        {id: 'WORM_GEAR', name: 'WORM GEAR'},
+        {id: 'SHAFT_COUPLING', name: 'SHAFT & COUPLING'},
+        {id: 'INDUSTRIAL_FLANGE', name: 'INDUSTRIAL FLANGE'},
+        {id: 'BUSHING', name: 'BUSHING'},
+        {id: 'BEARING_HOUSING', name: 'BEARING HOUSING'},
+        {id: 'MOUNTING_BRACKET', name: 'MOUNTING BRACKET'},
         {id: 'CUSTOM_CNC_PART', name: 'CUSTOM CNC METAL PART'}
       ];
 
-      const PRICES = { 'SPUR_GEAR': 500, 'HELICAL_GEAR': 750, 'BEVEL_GEAR': 900, 'WORM_GEAR': 1200, 'CUSTOM_CNC_PART': 1000 };
+      const PRICES = {
+        'SPUR_GEAR': 10000.00,
+        'HELICAL_GEAR': 12000.00,
+        'BEVEL_GEAR': 9000.00,
+        'WORM_GEAR': 11000.00,
+        'SHAFT_COUPLING': 8500.00,
+        'INDUSTRIAL_FLANGE': 3500.00,
+        'BUSHING': 1500.00,
+        'BEARING_HOUSING': 4500.00,
+        'MOUNTING_BRACKET': 2000.00,
+        'CUSTOM_CNC_PART': 16000.00
+      };
 
       const itemsBody = document.getElementById("itemsBody");
       const addItemBtn = document.getElementById("addItemBtn");
